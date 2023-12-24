@@ -5,17 +5,21 @@ import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   return (
     <header className={styles.Header}>
-      <Link to="/contact">
-        <p>This is Header</p>
+      <Link className={styles.Link} to="/">
+        This is Logo
       </Link>
       <textarea className={styles.textarea} placeholder="Search" rows={1} />
       <nav className={styles.Menu}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className={styles.Link} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link className={styles.Link} to="/contact">
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
