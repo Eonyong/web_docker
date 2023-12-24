@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <main className="Home">
       <p className="Title">This is HamePage Layout</p>
-      <textarea placeholder="Home Page" />
     </main>
   );
 };

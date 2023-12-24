@@ -8,7 +8,8 @@ const Header = () => {
       <Link to="/contact">
         <p>This is Header</p>
       </Link>
-      
+      <textarea className="textarea" placeholder="Search" rows={1} />
+      <p>Menu</p>
     </header>
   );
 };

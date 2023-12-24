@@ -16,3 +16,9 @@
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.textarea {
+  background-color: transparent;
+  color: white;
+  width: auto;
+}
