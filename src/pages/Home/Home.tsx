@@ -3,9 +3,10 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <p className="Home">
-      <p className="Title">Home Page</p>
-    </p>
+    <main className="Home">
+      <p className="Title">This is HamePage Layout</p>
+      <textarea placeholder="Home Page" />
+    </main>
   );
 };
 
