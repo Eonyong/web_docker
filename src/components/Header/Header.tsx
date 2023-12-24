@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="Header">
-      <Link to="/contact">This is Header</Link>
-      <p>Tihs is Menu</p>
+      <Link to="/contact">
+        <p>This is Header</p>
+      </Link>
+      
     </header>
   );
 };
