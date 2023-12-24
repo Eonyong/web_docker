@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  padding-inline: 30px;
   top: 0;
   left: 0;
   right: 0;
@@ -21,4 +22,16 @@
   background-color: transparent;
   color: white;
   width: auto;
+}
+
+.Menu {
+  ul {
+    display: flex;
+    list-style: none;
+
+    li + li {
+      margin-left: 30px;
+    }
+
+  }
 }
