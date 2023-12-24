@@ -1,0 +1,18 @@
+.Header {
+  height: 75px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  background-color: blueviolet;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.p  {
+  padding-left: 5px;
+  padding-right: 5px;
+}
