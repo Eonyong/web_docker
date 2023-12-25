@@ -20,12 +20,19 @@ const Login: React.FC = () => {
     }));
   };
 
-  const handleSubmit = () => console.log(user.email);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(user.email);
+    e.preventDefault();
+  };
 
   return (
     <main className={styles.Login}>
-      <form name="Login-Form">
-        <p>This Page is Login</p>
+      <p>This Page is Login</p>
+      <form
+        name="Login-Form"
+        onSubmit={handleSubmit}
+        className={styles.LoginFrom}
+      >
         <input
           placeholder="Email"
           type="email"
@@ -41,7 +48,7 @@ const Login: React.FC = () => {
           onChange={handleUserInform}
           autoComplete="off"
         />
-        <button onSubmit={handleSubmit}>제출</button>
+        <input type="submit" className={styles.Button} value="로그인" />
       </form>
     </main>
   );

@@ -1,5 +1,30 @@
 .Login  {
   min-height: 855px;
-  align-items: center;
   font-weight: bolder;
+  text-align: center;
+  flex: content;
+  grid-row: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  tr {
+    width: fit-content;
+  }
+}
+
+.LoginFrom  {
+  width: fit-content;
+}
+
+.Button {
+  height: 40px;
+  width: 80px;
+  background-color: blue;
+  font-weight: bold;
+  color: white;
+  border-radius: 3rem;
+}
+
+.Table {
+  width: 80%;
 }
