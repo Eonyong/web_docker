@@ -1,0 +1,63 @@
+services:
+  # Front-end
+  app-front:
+    image: node:latest
+    working_dir: /usr/src/app
+    ports:
+      - 3000:3000
+      - 35729:35729
+    volumes:
+      - ./app:/usr/src/app
+    command: yarn start
+    depends_on:
+      - app-db
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-networks
+    develop:
+      watch:
+        - path: /app/package.json
+          action: rebuild
+        - path: /app
+          target: /usr/src/app
+          action: sync
+
+  # back-end
+  app-back:
+    image: nginx:alpine
+    working_dir: /usr/src/app
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend:/usr/src/app
+    depends_on:
+      - app-db
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-networks
+
+  # Nginx
+  app-nginx:
+    image: nginx:alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./app/build:/usr/share/nginx/html
+    depends_on:
+      - app-front
+    networks:
+      - app-networks
+  
+  # Database
+  app-db:
+      image: mongo:latest
+      ports:
+        - 27017:27017
+      networks:
+        - app-networks
+
+networks:
+  app-networks:
+    driver: bridge
