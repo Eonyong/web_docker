@@ -17,7 +17,7 @@ const Header: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link className={styles.Link} to="/contact">
+            <Link className={styles.Link} to="/Login">
               Login
             </Link>
           </li>
