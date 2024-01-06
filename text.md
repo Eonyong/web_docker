@@ -50,6 +50,29 @@ services:
           action: sync
 ```
 
+  사실, Back-end라고 해서 큰 차이가 있는 것은 아니다. 대부분이 동일하게 image와 ports, working_dir 등 일반적인 설정은 동일하게 진행을 한다.
+  차이가 있다면, front-end에서는 node image를 사용했지만 back-end에서는 nginx를 사용하여 환경을 구성했다.
+  `ports`를 8080으로 쓰는 이유에 대해서는 크게 없다. 일반적으로 개발을 할 때에 8080 port를 주로 사용해왔기 때문에 8080으로 지정을 해주었다.
+  `volume`은 ./backend 경로에 개발된 내용을 컨테이너에 전달하도록 했는데, 만약 compose.yaml을 실행한 상황에서 해당 폴더에 backend 팡일이 없으면 자동으로 생성이 되게끔 한다.
+  나머지 부분에 대해서는 동일하다.
+
+```yaml
+# back-end
+  app-back:
+    image: nginx:alpine
+    working_dir: /usr/src/app
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend:/usr/src/app
+    depends_on:
+      - app-db
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-networks
+```
+
 ```yaml
 services:
   # Front-end
