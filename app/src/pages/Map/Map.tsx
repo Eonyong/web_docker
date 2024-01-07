@@ -4,12 +4,16 @@ import styles from "./Map.module.scss";
 const Map = () => {
   useEffect(() => {
     const NaverMap = naver.maps;
-    let position = new NaverMap.LatLng(37.3595704, 127.105399);
-    const map = new NaverMap.Map("map", {
+    let position: naver.maps.LatLng = new NaverMap.LatLng(
+      37.3595704,
+      127.105399
+    );
+
+    const map: naver.maps.Map = new NaverMap.Map("map", {
       center: position,
     });
 
-    const marker = new NaverMap.Marker({
+    const marker: naver.maps.Marker = new NaverMap.Marker({
       position: position,
       map: map,
     });
